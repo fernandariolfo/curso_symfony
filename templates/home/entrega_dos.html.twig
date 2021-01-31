@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+        {% block title %} {{ controller_name }} {% endblock %}
+
+        {% block stylesheets %}{% endblock %}
+
+        {% block javascripts %}{% endblock %}
+
+        {% block body %}
+
+            <div><h3>  <a href="{{ path('home') }}"><< Volver a Index Entregas </a> <h3></div>
+
+            <div><h2> Entrega 2 <h2></div>
+
+
+            <div><h3> Ejercicio 3.a) <h3></div>
+            <div><h4> Imprimir 20 veces un contenedor div que dentro tenga un título, el título
+            debe imprimirse en mayúscula usando algún filtro de twig. <h4></div>
+
+            
+            {% for i in 0..20 %}
+                <div>  {{ 'Titulo en mayuscula' |upper }}  </div>
+            {% endfor %}
+
+            <br>
+            <div> ************************************** </div>
+
+            <div><h3> Ejercicio 3.b) <h3></div>
+            <div><h4> Imprimir un contenedor div si una variable dada (puede ser llamada
+            como ustedes quieren) es igual a un valor dado. <h4></div>
+
+            {% if (variable_a_evaluar_numerica > valor_numerico) %}
+                 <div> {{ variable_a_evaluar_numerica }} es mayor que {{ valor_numerico }}
+                {% else %}
+                    <div> {{ variable_a_evaluar_numerica }} es menor que {{ valor_numerico }}
+            {% endif %}
+
+            <div><h3> Ejercicio 4 <h3></div>
+            <div><h4> Realice 2 vistas en el proyecto que creo en la clase anterior. <h4></div>
+            <a href="{{ path('home/vista_uno') }}">Link a Vista 1 </a>
+            <br>
+            <a href="{{ path('home/vista_dos') }}">Link a Vista 2 </a>
+
+        
+        {% endblock %}

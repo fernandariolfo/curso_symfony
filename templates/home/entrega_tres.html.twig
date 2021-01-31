@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+        {% block title %} {{ controller_name }} {% endblock %}
+
+        {% block stylesheets %}{% endblock %}
+
+        {% block javascripts %}{% endblock %}
+
+        {% block body %}
+
+            <div><h3>  <a href="{{ path('home') }}"><< Volver a Index Entregas </a> <h3></div>
+
+            <div><h2> Entrega 3 <h2></div>
+
+
+            <div><h3> Ejercicio 5 <h3></div>
+            <div><h4> Crear en nuestro proyecto 2 repositorios con 2 funciones que efectivamente
+            ingresen a una base de datos y relaciones alguna consulta. <h4></div>
+
+            <div><h4> Listado de Productos <h4></div>
+
+            {% for producto in productos %}
+                {{ producto.getNombre }} <br>
+            {% endfor %}
+
+            <div><h4> Listado de Categorias <h4></div>
+
+            {% for categoria in categorias %}
+                {{ categoria.getNombre }} <br>
+            {% endfor %}
+
+            <div><h4> Listado de Productos con Categoria C <h4></div>
+
+            {% for prod_categoria in productos_con_categoria_c %}
+                {{ prod_categoria.getNombre }} <br>
+            {% endfor %}
+        
+
+        {% endblock %}
