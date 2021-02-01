@@ -23,7 +23,6 @@ class HomeController extends AbstractController
             'controller_name' => 'Index entregas',
 
         ]);
-        
     }
 
     /**
@@ -41,7 +40,6 @@ class HomeController extends AbstractController
             'variable_a_evaluar_numerica' => $variable_a_evaluar_numerica,
             'valor_numerico' => $valor_numerico
         ]);
-        
     }
 
     
@@ -55,7 +53,6 @@ class HomeController extends AbstractController
         return $this->render('home/vista_uno.html.twig', [
             'controller_name' => 'Entrega 2 - Ejercicio 4 - Vista 1'
         ]);
-
     }
 
     /**
@@ -88,8 +85,30 @@ class HomeController extends AbstractController
             'productos_con_categoria_c' => $productos_con_categoria_c,
 
         ]);
-        
     }
+
+     /**
+     * @Route("/home/entrega_cuatro", name="home/entrega_cuatro")
+     */ 
+
+    public function entrega_cuatro(): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $productos = $em->getRepository(Product::class)->findAll();
+        $categorias = $em->getRepository(Category::class)->findAll();
+        $productos_con_categoria_c = $em->getRepository(Product::class)->findByCategoria(3);
+
+        return $this->render('home/entrega_cuatro.html.twig', [
+            'controller_name' => 'Entrega 3 - Ejercicio 5',
+            'productos' => $productos,
+            'categorias' => $categorias,
+            'productos_con_categoria_c' => $productos_con_categoria_c,
+
+        ]);
+    }
+
+
 
 
 }
