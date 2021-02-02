@@ -7,6 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Category;
 use App\Entity\Product;
+use Symfony\Component\HttpFoundation\Request;
+
 
 
 class HomeController extends AbstractController
@@ -96,17 +98,14 @@ class HomeController extends AbstractController
         $em = $this->getDoctrine()->getManager();
 
         $productos = $em->getRepository(Product::class)->findAll();
-        $categorias = $em->getRepository(Category::class)->findAll();
-        $productos_con_categoria_c = $em->getRepository(Product::class)->findByCategoria(3);
 
         return $this->render('home/entrega_cuatro.html.twig', [
-            'controller_name' => 'Entrega 3 - Ejercicio 5',
+            'controller_name' => 'Entrega 4 - Ejercicio 4',
             'productos' => $productos,
-            'categorias' => $categorias,
-            'productos_con_categoria_c' => $productos_con_categoria_c,
 
         ]);
     }
+
 
 
 
