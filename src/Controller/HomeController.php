@@ -106,6 +106,19 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/home/entrega_integradora", name="home/entrega_integradora")
+     */ 
+
+     public function entrega_integradora(): Response
+    {
+
+        return $this->render('home/entrega_integradora.html.twig', [
+            'controller_name' => 'Entrega integradora',
+
+        ]);
+    }
+
 
 
 

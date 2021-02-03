@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+        {% block title %} {{ controller_name }} {% endblock %}
+
+        {% block stylesheets %}{% endblock %}
+
+        {% block javascripts %}{% endblock %}
+
+        {% block body %}
+
+            <div><h3>  <a href="{{ path('home') }}"><< Volver a Index Entregas </a> <h3></div>
+
+            <div><h2> Actividad integradora <h2></div>
+
+            <div><h3> Ejercicio <h3></div>
+            <div><h4> Realizar un sistema de logeo<h4></div>
+            
+             <form action="{{ path('login') }}" method="post">
+                <label>Nombre de usuario</label>
+                <input type="text" id="username" name="username"><br>
+                <label>Password</label>
+                <input type="password" id="password" name="password"><br>
+                <input type="submit" value="Ingresar">
+            </form>
+        
+        {% endblock %}

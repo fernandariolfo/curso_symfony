@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+        {% block title %} {% endblock %}
+
+        {% block stylesheets %}{% endblock %}
+
+        {% block javascripts %}{% endblock %}
+
+        {% block body %}
+
+            <div><h3>  <a href="{{ path('home') }}"><< Volver a Index Entregas </a> <h3></div>
+            <div><h4> <a href="{{ path('home/entrega_integradora') }}"><< Volver a login </a> <h4></div>
+
+            <div><h3> {{ estado_acceso }} <h3></div>
+
+        
+        {% endblock %}

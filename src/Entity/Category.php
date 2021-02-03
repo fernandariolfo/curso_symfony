@@ -50,7 +50,5 @@ class Category
         return $this->nombre;
     }
 
-    
-
 
 }
